@@ -383,7 +383,7 @@ public class Bridge {
 
         Uri appUri = Uri.parse(appUrl);
         if (
-            !(appUri.getHost().equals(url.getHost()) && url.getScheme().equals(appUri.getScheme())) &&
+           !((url.getHost() != null && url.getHost().equals(appUri.getHost())) && url.getScheme().equals(appUri.getScheme())) &&
             !appAllowNavigationMask.matches(url.getHost())
         ) {
             try {
